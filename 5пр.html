@@ -1,0 +1,108 @@
+<html>
+<head>
+<title>Лаба5</title>
+</head>
+<body>
+
+<script>
+class Animal{
+food;
+location;
+
+constructor(foo, locatio){
+this.food = foo;
+this.location = locatio;
+}
+
+makeNoise(){
+return 'обычная';
+}
+
+eat(){
+return 'ест';
+}
+
+sleep(){
+return 'охотится';
+}}
+
+class Bear extends Animal{
+breed;
+
+constructor(foo, locatio, breed){
+super(foo, locatio);
+this.breed = breed;
+}
+
+makeNoise(){
+return 'медведь' + ' ' + super.makeNoise();
+}
+
+eat(){
+return 'медведь' + ' ' + super.eat() + ' ' + this.food;
+}
+
+sleep(){
+return 'медведь' + ' ' + super.sleep();
+}}
+
+class Fox extends Animal{
+color;
+
+constructor(foo, locatio, color){
+super(foo, locatio);
+this.color = color;
+}
+
+makeNoise(){
+return 'лиса' + ' ' + super.makeNoise();
+}
+
+eat(){
+return 'лиса' + ' ' + super.eat() + ' ' + this.food;
+}
+
+sleep(){
+return 'лиса' + ' ' + super.sleep();
+}}
+
+class goat extends Animal{
+ispodkovannaya;
+
+constructor(foo, locatio, kozohka){
+super(foo, locatio);
+this.kozohka = kozohka;
+}
+
+makeNoise(){
+return 'коза' + ' ' + super.makeNoise();
+}
+
+eat(){
+return 'коза' + ' ' + super.eat() + ' ' + this.food;
+}
+
+sleep(){
+return 'коза' + ' ' + super.sleep();
+}}
+
+class Vetguy{
+
+static threatAnimal(obj){
+return obj.eat() + ' ' + `место обитания - ${obj.location}.` + '<br>';
+}}
+let foxi = new Fox('грызунов и птиц','лес','рыжая');
+document.write(Vetguy.threatAnimal(foxi));
+document.write(foxi.color + ' ' + foxi.sleep() + '<br>' + '<br>');
+
+let kozohka = new goat('зелень','загон','обычная');
+document.write(Vetguy.threatAnimal(kozohka));
+document.write(kozohka.kozohka + ' ' + kozohka.makeNoise() + '<br>' + '<br>');
+
+let pit = new Bear('малина','лес','бурый');
+document.write(Vetguy.threatAnimal(pit));
+document.write(pit.breed + ' ' + pit.sleep());
+
+</script>
+</body>
+</html>
