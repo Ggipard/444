@@ -1,0 +1,42 @@
+<html>
+<head>
+<title>пр6</title>
+<meta charset="UTF-8">
+</head>
+<body>
+<script>
+function person(firstName, lastName, birthDate){
+this.name = firstName;
+this.show = function(){
+document.write(`Имя: ${firstName}, фамилия: ${lastName}, дата рождения: ${birthDate} <br>`);
+};
+this.str = function(game, book){
+document.write(`${this.name} читает журнал ${book.name} про видео игры ${ game.journal}`)
+};
+}
+
+function game(journal, yearVihoda, quantity){
+this.journal = journal;
+this.show = function(){
+document.write(`Название: ${journal}, год выхода: ${yearVihoda}, количество видео игр: ${quantity} <br>`);
+};
+}
+
+function book(name, autor, year){
+this.name = name;
+this.show = function(){
+document.write(`Название журнала: ${name}, автор: ${autor}, год выпуска: ${year} <br>`);
+};
+}
+
+let personobj = new person('Кирилл','Федосеев', 2004);
+let gameobj = new game('игры с 9 по 13 год','2013', 16);
+let bookobj = new book('Games indastril','Уил Джефирсон', 2013);
+
+personobj.show();
+gameobj.show();
+bookobj.show();
+personobj.str(gameobj, bookobj);
+</script>
+</body>
+</html>
