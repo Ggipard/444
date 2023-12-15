@@ -1,0 +1,95 @@
+<html>
+<head>
+<title>Lab10</title>
+<style>
+body {display: flex;
+justify-content: center;}
+
+section {width: 600px;}
+
+header {padding: 5px;
+border: 2px solid black;
+margin-bottom: 10px;
+display: flex;
+justify-content: space-around;}
+
+article {padding: 20px;
+display: flex;
+justify-content: space-between;
+border: 2px solid black;}
+
+img {border: 1px solid gray;}
+
+article > div:first-child {width: 55%;}
+article > div:last-child {width: 40%;}
+
+p, a {text-align: justify;
+font-size: 18px;}
+</style>
+</head>
+<body>
+<section>
+<header>
+<div>
+<input type="button" value="Ч/Б" onclick="colorchange('black', 'white')">
+<input type="button" value="Б/Ч" onclick="colorchange('white', 'black')">
+<input type="button" value="Г/Ч" onclick="colorchange('blue', 'black')">
+</div>
+<div>
+<input type="button" value="Вкл/выкл рисунки" onclick="turnPictures()">
+</div>
+<div>
+<input type="button" value="18px" onclick="fontSize('18px')">
+<input type="button" value="20px" onclick="fontSize('20px')">
+<input type="button" value="24px" onclick="fontSize('24px')">
+</div>
+</header>
+<article>
+<div>
+<h2>Белый Бим Чёное ухо</h2>
+<p>«Бе́лый Бим Чёрное у́хо» — советский двухсерийный художественный фильм 1977 года. Восьмой фильм Станислава Ростоцкого[1], экранизация одноимённой повести Гавриила Троепольского. </p>
+<img src="https://webpulse.imgsmail.ru/imgpreview?mb=webpulse&key=pulse_cabinet-image-0c4bf893-6201-472e-a4bb-a952e7d7a513" width="308">
+<p>Шестая совместная работа Ростоцкого и актёра Вячеслава Тихонова. Съёмки фильма проходили в Калуге. Во время первого проката фильм посмотрели более 20 миллионов зрителей. По Центральному телевидению фильм впервые был показан 26 (1 серия) и 27 (2 серия) августа 1980 г.
+
+Фильм номинировался на кинопремию «Оскар» в 1979 году как лучший фильм на иностранном языке[2] (премия досталась французскому фильму «Приготовьте ваши носовые платки»).
+
+В 1978 году по опросу журнала «Советский экран» он был признан лучшим фильмом года. Работа Вячеслава Тихонова в этом фильме была удостоена Ленинской премии.</p>
+<h2>Сюжет</h2>
+<p>История преданного хозяину пса, неожиданно попавшего в беду. Бим, наделённый с рождения белым окрасом, не соответствующим стандарту шотландских сеттеров, живёт в квартире вместе со своим хозяином, одиноким пенсионером Иваном Ивановичем. Хозяин, бывший журналист, участник и инвалид Великой Отечественной войны, а ныне весёлый охотник, любит свою собаку и систематически вывозит её на охоту в лес.</p>
+</div>
+<div>
+<p>Неожиданно хозяину дал о себе знать осколок в сердце, его отвозят в Москву, а пёс поручается соседке, но по недосмотру выскакивает из квартиры в поисках хозяина и оказывается на улице. Путешествуя без надзора, Бим встречает множество людей — добрых и злых, старых и молодых, — все они описываются глазами собаки, сквозь призму её восприятия.</p>
+<p> Бим подвергается разному отношению, от жалости и попыток помочь до жестокости. Никому не удаётся приютить его у себя на постоянной основе. Почти уже дождавшись возвращения своего хозяина, Бим попадает в приют, став жертвой предательства и наговора со стороны соседки по подъезду, желающей избавиться от присутствия во дворе собаки. Его находят мёртвым. Но он останется с нами.</p>
+<img src="https://stihi.ru/pics/2023/06/10/6168.jpg" width="224">
+<a href="#">Подробнее...</a>
+</div>
+</article>
+</section>
+<script>
+function colorchange(font, bg){
+let text = document.querySelectorAll('p,a,h2');
+let background = document.getElementsByTagName('article')[0];
+for (let elem of text)
+elem.style.color = font;
+background.style.backgroundColor = bg;
+}
+
+function turnPictures(){
+let pics = document.images;
+if (!pics[0].getAttribute('hidden')){
+for (let elem of pics)
+elem.setAttribute('hidden', 'true');
+}
+else{
+for (let elem of pics)
+elem.removeAttribute('hidden');
+}}
+
+function fontSize(size){
+let text = document.querySelectorAll('p');
+for (let elem of text)
+elem.style.fontSize = size;
+}
+</script>
+</body>
+</html>
