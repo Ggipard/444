@@ -1,0 +1,42 @@
+<html>
+<head>
+<title>laba7</title>
+</head>
+<body>
+<script>
+function factory(firstKey, entityName, secondKey, entityProperty){
+return {
+[firstKey]: entityName,
+[secondKey]: entityProperty
+}}
+
+(function main(){
+let peopleArr = [];
+let windArr = [];
+let bookArr = [];
+
+peopleArr.push(factory('name', 'Егор', 'age', 19));
+peopleArr.push(factory('name', 'Кирилл', 'age', 29));
+peopleArr.push(factory('name', 'Пётр', 'age', 23));
+
+windArr.push(factory('Верссия', 'windiws', '', 2009));
+windArr.push(factory('Верссия', 'windiws', '',  2015));
+windArr.push(factory('Верссия', 'windiws', '', 2021));
+
+bookArr.push(factory('title', 'Толтый и тонкий', '', 1883));
+bookArr.push(factory('title', 'Белый бим чёрное ухо', '', 1971));
+bookArr.push(factory('title', 'Шапка', '', 1987));
+
+for (let key in peopleArr){
+document.write(String(Object.entries(peopleArr[key])).replaceAll(',', ' ') + '<br>');
+}
+for (let key in windArr){
+document.write(String(Object.entries(windArr[key])).replaceAll(',', ' ') + '<br>');
+}
+for (let key in bookArr){
+document.write(String(Object.entries(bookArr[key])).replaceAll(',', ' ') + '<br>');
+}
+})()
+</script>
+</body>
+</html>
